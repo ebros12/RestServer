@@ -5,7 +5,7 @@ $(document).ready(function() {
 
     $.ajax({
         data: { email: "botebros2@gmail.com", password: "asd" },
-        url: 'localhost:3000/login',
+        url: 'https://polar-badlands-46963.herokuapp.com/login',
         type: 'POST',
         dataType: 'JSON',
         success: function(json) {
