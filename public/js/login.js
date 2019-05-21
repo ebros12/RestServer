@@ -7,23 +7,29 @@ $(document).ready(function() {
             email: $("#email").val(),
             password: $("#password").val()
         }
-        Swal.fire(data)
-            //Ajax consultando el servicio
+
+        //Ajax consultando el servicio
         $.ajax({
             data: data,
             url: 'https://polar-badlands-46963.herokuapp.com/login',
             type: 'POST',
             dataType: 'JSON',
             success: function(json) {
-                console.log(json);
+                window.location.href = "home.html";
             },
             error: function(xhr, status) {
-                console.log(xhr, status);
+                Swal.fire({
+                    type: 'error',
+                    title: 'ups...',
+                    text: 'Usuario o Contraseña Incorrectos!',
+                })
             }
         })
     }
 
-
+    $("#Logear").click(function() {
+        Login()
+    })
     $('.signup-btn').click(function() {
         $('.register-form').show('slow');
         $('.secure-login').hide('slow');
@@ -33,6 +39,9 @@ $(document).ready(function() {
     $('.signup-btn').trigger('click');
 
     $('.login-btn').click(function() {
-        Login()
+        $('.secure-login').show('slow');
+        $('.register-form').hide('slow');
+        $('body').removeClass().addClass('login-slide');
     });
 });
+0
