@@ -6,18 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Google Sing In Demo Control de Inventario</title>
+    <link rel="stylesheet" href="css/loginStyle.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
 <body>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
 
 
-    <a href="#" onclick="signOut();">Sign out</a>
+    <div class="container bg-slide">
+        <div class="form-group">
+            <div class="btn-group">
+                <button class="signup-btn"><i class="fa fa-user"> </i>&nbsp;Signup</button>
+                <button class="login-btn"><i class="fa fa-lock"> </i>&nbsp;Login</button>
+                <!-- Google Sing -->
+                <br><br>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <a href="#" onclick="signOut();">Sign out</a>
+                <br><br>
+            </div>
+            <form class="register-form">
+                <div class="title-label bg-register"><i class="fa fa-user"></i>&nbsp;REGISTER FOR FREE</div>
+                <input class="form-control" type="text" placeholder="Name" required="required" />
+                <input class="form-control" type="email" placeholder="Email" required="required" />
+                <input class="form-control" type="text" placeholder="Password" required="required" />
+                <button class="btn-submit" type="submit">Submit</button>
+            </form>
+            <form class="secure-login">
+                <div class="title-label bg-login"><i class="fa fa-lock"></i>&nbsp;LOGIN SECURELY</div>
+                <select class="login-option">
+                      <option>Premium Member</option>
+                      <option>Standard Member</option>
+                    </select>
+                <input class="form-control" type="email" placeholder="Email" required="required" />
+                <input class="form-control" type="text" placeholder="Password" required="required" />
+                <button class="btn-submit" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
 
 
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/SweetAlert2.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="421228536184-d9fbauchbp2n00di1l3h1aggt81pm5vl.apps.googleusercontent.com">
-
+    <script src="js/login.js"></script>
 
 
     <script>

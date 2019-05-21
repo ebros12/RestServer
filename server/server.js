@@ -15,14 +15,25 @@ app.use(bodyParser.json())
 //Habilitar carpeta public
 app.use(express.static(path.resolve(__dirname, '../public')));
 
+
 //Config globa de rutas
 app.use(require('./routes/index'));
+
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+    res.header("Access-Control-Allow-Headers", "Content-Type");
+    next();
+});
+
 
 
 mongoose.connect(process.env.URLDB, { useNewUrlParser: true, useCreateIndex: true },
     (err, res) => {
         if (err) throw err;
         console.log("bases de datos ONLINE");
+
     });
 
 app.listen(process.env.PORT, () => {
