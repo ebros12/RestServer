@@ -1,20 +1,28 @@
 $(document).ready(function() {
     // =҉====҉==҉=҉=҉==҉=҉=҉====҉==҉=҉=҉==҉=҉
-    // Actualiza una nueva categoria
+    // Inicio de Sesion
     // =҉====҉==҉=҉=҉==҉=҉=҉====҉==҉=҉=҉==҉=҉
-
-    $.ajax({
-        data: { email: "botebros2@gmail.com", password: "asd" },
-        url: 'https://polar-badlands-46963.herokuapp.com/login',
-        type: 'POST',
-        dataType: 'JSON',
-        success: function(json) {
-            console.log(json);
-        },
-        error: function(xhr, status) {
-            console.log(xhr, status);
+    Login((usuario, password) => {
+        let data = {
+            email: $("#email").val(),
+            password: $("#password").val()
         }
+        Swal.fire(data)
+            //Ajax consultando el servicio
+        $.ajax({
+            data: data,
+            url: 'https://polar-badlands-46963.herokuapp.com/login',
+            type: 'POST',
+            dataType: 'JSON',
+            success: function(json) {
+                console.log(json);
+            },
+            error: function(xhr, status) {
+                console.log(xhr, status);
+            }
+        })
     })
+
 
     $('.signup-btn').click(function() {
         $('.register-form').show('slow');
