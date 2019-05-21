@@ -2,7 +2,7 @@ $(document).ready(function() {
     // =҉====҉==҉=҉=҉==҉=҉=҉====҉==҉=҉=҉==҉=҉
     // Inicio de Sesion
     // =҉====҉==҉=҉=҉==҉=҉=҉====҉==҉=҉=҉==҉=҉
-    res.render('about');
+
 
     function Login() {
         let data = {
