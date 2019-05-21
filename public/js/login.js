@@ -2,7 +2,7 @@ $(document).ready(function() {
     // =҉====҉==҉=҉=҉==҉=҉=҉====҉==҉=҉=҉==҉=҉
     // Inicio de Sesion
     // =҉====҉==҉=҉=҉==҉=҉=҉====҉==҉=҉=҉==҉=҉
-    Login((usuario, password) => {
+    function Login() {
         let data = {
             email: $("#email").val(),
             password: $("#password").val()
@@ -21,7 +21,7 @@ $(document).ready(function() {
                 console.log(xhr, status);
             }
         })
-    })
+    }
 
 
     $('.signup-btn').click(function() {
@@ -33,8 +33,6 @@ $(document).ready(function() {
     $('.signup-btn').trigger('click');
 
     $('.login-btn').click(function() {
-        $('.secure-login').show('slow');
-        $('.register-form').hide('slow');
-        $('body').removeClass().addClass('login-slide');
+        Login()
     });
 });
