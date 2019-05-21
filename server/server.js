@@ -20,6 +20,7 @@ app.use(express.static(path.resolve(__dirname, '../public')));
 app.use(require('./routes/index'));
 
 
+//Configuracion para poder ser llamado desde cualquier pagina
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");

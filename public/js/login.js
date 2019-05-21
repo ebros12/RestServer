@@ -2,6 +2,8 @@ $(document).ready(function() {
     // =҉====҉==҉=҉=҉==҉=҉=҉====҉==҉=҉=҉==҉=҉
     // Inicio de Sesion
     // =҉====҉==҉=҉=҉==҉=҉=҉====҉==҉=҉=҉==҉=҉
+    res.render('about');
+
     function Login() {
         let data = {
             email: $("#email").val(),
@@ -15,7 +17,7 @@ $(document).ready(function() {
             type: 'POST',
             dataType: 'JSON',
             success: function(json) {
-                window.location.href = "home.html";
+                window.location.href = "home.hbs";
             },
             error: function(xhr, status) {
                 Swal.fire({
@@ -30,18 +32,6 @@ $(document).ready(function() {
     $("#Logear").click(function() {
         Login()
     })
-    $('.signup-btn').click(function() {
-        $('.register-form').show('slow');
-        $('.secure-login').hide('slow');
-        $('body').removeClass().addClass('signup-slide');
-    });
-    //default dispaly
-    $('.signup-btn').trigger('click');
 
-    $('.login-btn').click(function() {
-        $('.secure-login').show('slow');
-        $('.register-form').hide('slow');
-        $('body').removeClass().addClass('login-slide');
-    });
+
 });
-0
