@@ -17,7 +17,7 @@ $(document).ready(function() {
             type: 'POST',
             dataType: 'JSON',
             success: function(json) {
-                window.location.href = "home.hbs";
+                window.location.href = "home.html";
             },
             error: function(xhr, status) {
                 Swal.fire({
