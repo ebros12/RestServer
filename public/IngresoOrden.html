@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Administrar Productos</title>
+    <link rel="stylesheet" href="css/HomeStyle.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="css/OrdenCompra.css">
+    <link rel="stylesheet" href="css/IngresoOrden.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/hover-min.css">
+    <link rel="stylesheet" href="css/datatables.min.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+
+
+</head>
+
+<body>
+    <div class=" row h1titulo">
+        <img src="img/logo.png" class="img-thumbnail logo" alt="Ebros">
+        <h1>Recepción de Productos</h1>
+    </div>
+
+
+    <div class="row productos">
+        <div class="col-7 input-group mb-3">
+            <div class="input-group-prepend">
+                <span style="width: 50px;height: 47px;" class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i> </span>
+            </div>
+            <input id="orden" type="text" class="form-control" placeholder="Nº Orden de Compra">
+            <button id="buscar" class="btn btn-info">buscar</button>
+            <button class="guardar btn btn-success">Guardar</button>
+        </div>
+        <div id="form" class="form col-12 ">
+            <div class="row paso1">
+                <div class="col-md-2">
+
+                    <img src="img/logo.png" class="ml-3 logo" alt="Ebros">
+
+
+                </div>
+                <div class=" col-md-5">
+                    <label class="ml-3" for="CorrelativoOrden"></label>
+                    <input class="ml-3" disabled id="CorrelativoOrden" type="text" value="Recepción de Productos" />
+                </div>
+                <div class="col-md-5">
+                    <label for="nOrden">Nº Orden</label>
+                    <input disabled id="nOrden" type="text" value="" />
+                </div>
+            </div>
+            <div class="row paso1">
+                <div class="col-md-12">
+                    <label for="FechaInicio">Nombre Empresa</label>
+                    <input id="empresaPadre" disabled type="text" value="Ebros S.A." />
+                </div>
+
+            </div>
+            <div class="row paso1">
+                <div class="col-md-12">
+                    <label for="DPTO">DPTO</label>
+                    <input id="DPTO" type="text" disabled value="" />
+                </div>
+            </div>
+            <div class="row paso1">
+                <div class="col-md-6">
+                    <label for="Concepto">Concepto</label>
+                    <input id="Concepto" type="text" value="" />
+                </div>
+                <div class="col-md-6">
+                    <label for="CorrelativoOrden">Nº Correlativo</label>
+                    <input id="CorrelativoOrden" type="text" value="" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row ml-5 pl-5">
+        <div class="ml-5 resultado table-responsive-sm col-12">
+            <table style="width:100%" class="table table-striped table-hover  table-sm" id="tablaProducto"></table>
+        </div>
+
+
+    </div>
+
+    </div>
+
+
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/SweetAlert2.js"></script>
+    <script src="js/dashbboard.js"></script>
+
+    <script src="js/datatables.min.js"></script>
+    <script src="js/js.cookie.min.js"></script>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+    <script src="js/all.js"></script>
+
+    <script src="js/html2canvas.js"></script>
+    <script src="js/IngresoOrden.js"></script>
+
+    <script src="js/jquery.PrintArea.js"></script>
+
+
+
+</body>
+
+</html>

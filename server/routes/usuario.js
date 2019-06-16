@@ -35,12 +35,46 @@ app.get('/usuario', verificaToken, (req, res) => {
         })
 })
 
-app.post('/usuario', [verificaToken, verificaAdmin_Role], (req, res) => {
+
+// =҉====҉==҉=҉=҉==҉=҉=҉====҉==҉=҉=҉==҉=҉
+// Obtener un usuario por ID
+// =҉====҉==҉=҉=҉==҉=҉=҉====҉==҉=҉=҉==҉=҉
+app.get('/usuario/:id', verificaToken, (req, res) => {
+    // populate usuario categoria
+    // paginado
+    let id = req.params.id
+    Usuario.findById(id)
+        .exec((err, usuarioDB) => {
+            if (err) {
+                return res.status(500).json({
+                    ok: false,
+                    err
+                })
+            }
+            if (!usuarioDB) {
+                return res.status(400).json({
+                    ok: false,
+                    err: {
+                        message: 'El ID no es valido'
+                    }
+                })
+
+            }
+            res.json({
+                ok: true,
+                usuario: usuarioDB
+            })
+        })
+})
+
+
+app.post('/usuario', (req, res) => {
 
     let body = req.body;
 
     let usuario = new Usuario({
         nombre: body.nombre,
+        apellido: body.apellido,
         email: body.email,
         password: bcrypt.hashSync(body.password, 10),
         //img:body.img,
@@ -63,8 +97,13 @@ app.post('/usuario', [verificaToken, verificaAdmin_Role], (req, res) => {
 
 app.put('/usuario/:id', [verificaToken, verificaAdmin_Role], (req, res) => {
     let id = req.params.id;
-    let body = _.pick(req.body, ['nombre', 'email', 'img', 'role', 'estado']);
+    let bodys = req.body;
+    let body = _.pick(req.body, ['apellido', 'password', 'nombre', 'email', 'img', 'role', 'estado']);
+    if (body['password']) {
+        body['password'] = bcrypt.hashSync(body['password'], 10)
+    }
 
+    console.log(body);
     // Usuario.findById(id, (err, usuarioDB) => {
     //     usuarioDB.save
     // })

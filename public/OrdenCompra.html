@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Administrar Productos</title>
+    <link rel="stylesheet" href="css/HomeStyle.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/OrdenCompra.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/hover-min.css">
+    <link rel="stylesheet" href="css/datatables.min.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker-standalone.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.css">
+
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+
+
+</head>
+
+<body>
+    <div class="h1titulo row">
+        <img src="img/logo.png" class="img-thumbnail logo" alt="Ebros">
+        <h1>Creacion Orden de Compra</h1>
+    </div>
+
+    <div class="form">
+        <div class="row paso1">
+            <div class="col-md-6">
+                <label for="FechaInicio">Nombre Empresa</label>
+                <input id="empresaPadre" disabled type="text" value="Ebros S.A." />
+            </div>
+            <div class="col-md-6">
+                <label for="FechaFin">Dirección</label>
+                <input id="DireccionPadre" type="text" disabled value="General Concha Pedregal #814" />
+            </div>
+        </div>
+
+        <div class="row paso1">
+            <div class="col-md-6">
+                <label for="FechaInicio">Fecha de Orden</label>
+                <input id="FechaInicio" type="text" />
+            </div>
+            <div class="col-md-6">
+                <label for="FechaFin">Fecha de Entrega</label>
+                <input id="FechaFin" type="text" />
+            </div>
+        </div>
+
+        <div class="row paso1">
+            <div class="col-md-12">
+                <label for="proveedor">Proveedor</label>
+                <br>
+                <center><select id="Proveedores" class="form-control"><option value=" ">-- Seleccione un Proveedor --</option></select></center>
+
+            </div>
+        </div>
+
+        <div class="row paso1">
+            <div class="col-md-6">
+                <label for="dpto">DPTO. Solicitante</label>
+                <input id="dpto" type="text" placeholder="DPTO. Solicitante" />
+            </div>
+            <div class="col-md-6">
+                <label for="CPago">Condiciones De Pago</label>
+                <input id="CPago" type="text" placeholder="Condiciones De Pago" />
+            </div>
+        </div>
+        <div class="row paso1">
+            <div class="col-md-12">
+                <label for="Cantidad">Importe</label>
+                <input id="importe" type="text" placeholder="importe" />
+            </div>
+        </div>
+        <div class="row paso1 Productos">
+
+
+        </div>
+        <div class="row paso1">
+            <div class="col-md-4">
+                <label for="iva">IVA</label>
+                <input id="iva" type="text" placeholder="iva" />
+            </div>
+            <div class="col-md-4">
+                <label for="Total">Total</label>
+                <input id="Total" type="text" placeholder="Total" />
+            </div>
+            <div class="col-md-4">
+                <label for="Total">Total + IVA</label>
+                <input id="TotalIVA" type="text" placeholder="Total" />
+            </div>
+        </div>
+
+
+
+        <footer>
+            <button class="btn btn-warning" id="AgregaProducto" /> + Agregar Producto</button>
+            <button class="btn btn-warning" id="Finalizar" />Finalizar</button>
+
+        </footer>
+
+
+    </div>
+
+
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/SweetAlert2.js"></script>
+    <script src="js/dashbboard.js"></script>
+    <script src="js/productos.js"></script>
+    <script src="js/datatables.min.js"></script>
+    <script src="js/js.cookie.min.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
+    <script src="js/OrdenCompra.js"></script>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+    <script src="js/all.js"></script>
+    <script src="js/jquery.PrintArea.js"></script>
+
+
+</body>
+
+</html>

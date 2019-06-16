@@ -10,8 +10,8 @@ let Categoria = require('../models/categoria');
 // =҉====҉==҉=҉=҉==҉=҉=҉====҉==҉=҉=҉==҉=҉
 app.get('/categoria', verificaToken, (req, res) => {
     Categoria.find({})
-        .sort('descripcion')
-        .populate('usuario', 'nombre email')
+        .sort('descripcion ')
+        .populate('usuario', 'nombre email ')
         .exec((err, categorias) => {
             if (err) {
                 return res.status(500).json({
@@ -68,7 +68,8 @@ app.post('/categoria', verificaToken, (req, res) => {
 
     let categoria = new Categoria({
         descripcion: body.descripcion,
-        usuario: req.usuario._id
+        usuario: req.usuario._id,
+
     })
     categoria.save((err, categoriaDB) => {
         if (err) {
@@ -98,15 +99,12 @@ app.post('/categoria', verificaToken, (req, res) => {
 app.put('/categoria/:id', (req, res) => {
     // nombre categoria
     let id = req.params.id;
-    let body = req.body;
-    let descCategoria = {
-        descripcion: body.descripcion
-    };
+    let body = _.pick(req.body, ['descripcion']);
 
     // Usuario.findById(id, (err, usuarioDB) => {
     //     usuarioDB.save
     // })
-    Categoria.findByIdAndUpdate(id, descCategoria, { new: true, runValidators: true }, (err, categoriaDB) => {
+    Categoria.findByIdAndUpdate(id, body, { new: true, runValidators: true }, (err, categoriaDB) => {
         if (err) {
             return res.status(500).json({
                 ok: false,

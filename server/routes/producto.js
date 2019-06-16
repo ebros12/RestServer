@@ -10,22 +10,25 @@ let Producto = require('../models/producto');
 app.get('/productos', (req, res) => {
     // populate usuario categoria
     // paginado
-    Producto.find({ disponible: true }, 'nombre precioUni descripcion')
+    Producto.find({ disponible: true }, 'nombre precioUni descripcion Umedida')
         .sort('nombre')
         .populate('usuario', 'nombre email')
         .populate('categoria', 'descripcion')
-        .exec((err, productos) => {
-            if (err) {
-                return res.status(500).json({
-                    ok: false,
-                    err
-                })
-            }
-            res.json({
-                ok: true,
-                productos
+        .populate('distribucion', 'nombre')
+
+
+    .exec((err, productos) => {
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                err
             })
+        }
+        res.json({
+            ok: true,
+            productos
         })
+    })
 })
 
 // =҉====҉==҉=҉=҉==҉=҉=҉====҉==҉=҉=҉==҉=҉
@@ -97,7 +100,10 @@ app.post('/productos', verificaToken, (req, res) => {
         descripcion: body.descripcion,
         disponible: body.disponible,
         categoria: body.categoria,
-        usuario: req.usuario._id
+        usuario: req.usuario._id,
+        Umedida: body.Umedida,
+        distribucion: body.distribucion
+
     })
     producto.save((err, productoDB) => {
         if (err) {
@@ -129,7 +135,7 @@ app.put('/productos/:id', (req, res) => {
     // grabar el usuario
     // grabar una categoria del listado
     let id = req.params.id;
-    let body = _.pick(req.body, ['nombre', 'precioUni', 'descripcion', 'categoria']);
+    let body = _.pick(req.body, ['nombre', 'precioUni', 'descripcion', 'categoria', 'Umedida', ]);
 
     // Usuario.findById(id, (err, usuarioDB) => {
     //     usuarioDB.save

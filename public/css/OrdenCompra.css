@@ -1,0 +1,183 @@
+.form [class*='col'] {
+    border: solid 1px #a0a0a0;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+}
+
+@media (max-width: 991px) {
+    .form .row:first-of-type [class*='col']:first-of-type {
+        border-top: solid 1px #a0a0a0;
+    }
+}
+
+@media (min-width: 992px) {
+    .form>.row:first-of-type>[class*='col'] {
+        border: solid 1px #a0a0a0;
+    }
+    .form>div>[class*='col']+[class*='col'] {
+        border-left: 0;
+    }
+}
+
+.form label {
+    color: #808080;
+    font-size: 0.8em;
+    position: absolute;
+    left: 1em;
+    top: 0em;
+}
+
+.form input[type="text"],
+.form input[type="password"] {
+    background-color: transparent;
+    border: 0;
+    box-sizing: border-box;
+    display: block;
+    padding: 2.5em 1em 1em;
+    width: 100%;
+    font-size: 12px;
+}
+
+.form input:focus {
+    box-shadow: inset 0 0 5px #5b9dd9;
+    outline: 0;
+}
+
+.form input::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.form input::-moz-placeholder {
+    color: transparent;
+}
+
+.form input:-ms-input-placeholder {
+    color: transparent;
+}
+
+.form input::input-placeholder {
+    color: transparent;
+}
+
+
+/* Header / Footer */
+
+.form header,
+.form footer {
+    padding: 1em;
+    width: 100%;
+}
+
+.form header {
+    font-size: 1.6em;
+}
+
+.form footer {
+    box-sizing: border-box;
+    border-collapse: separate;
+    display: table;
+}
+
+.form footer>* {
+    display: table-cell;
+}
+
+.form footer p {
+    font-size: 0.8em;
+}
+
+
+/* Custom code for the demo */
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    width: 100%;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #232323;
+    font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    display: table-cell;
+}
+
+.form {
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.container {
+    width: 800px;
+    margin: 50px auto;
+}
+
+.container>div {
+    float: left;
+    background-color: #F6F6F6;
+    border: 1px solid #CCC;
+    min-height: 50px
+}
+
+.container .left {
+    width: 40%;
+    margin-right: 3%
+}
+
+.container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+.container ul li {
+    cursor: pointer;
+    padding: 15px
+}
+
+.container ul li:not(:first-child) {
+    border-top: 2px solid #FFF
+}
+
+.container ul .active {
+    background-color: #DDD
+}
+
+.container .arrow {
+    width: 14%;
+    text-align: center
+}
+
+.container .arrow span {
+    display: block;
+    background-color: #EEE;
+    margin-bottom: 5px;
+    font-size: 24px;
+    cursor: pointer
+}
+
+.container .right {
+    width: 40%;
+    margin-left: 3%
+}

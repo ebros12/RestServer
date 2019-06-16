@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Administrar Productos</title>
+    <link rel="stylesheet" href="css/HomeStyle.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/hover-min.css">
+    <link rel="stylesheet" href="css/datatables.min.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+</head>
+
+<body>
+    <div class="h1titulo row">
+        <img src="img/logo.png" class="img-thumbnail logo" alt="Ebros">
+        <h1> Administrador de Usuarios</h1>
+
+    </div>
+
+    <div class="row productos table-responsive-sm">
+
+        <!-- // =҉====҉==҉=҉=҉==҉=҉=҉====҉==҉=҉=҉==҉=҉
+                // Crear productos Admin
+                // =҉====҉==҉=҉=҉==҉=҉=҉====҉==҉=҉=҉==҉=҉ -->
+    </div>
+
+
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form>
+                        <div class="input-group mb-3 input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Correo</span>
+                            </div>
+                            <input id="correo" type="text" class="form-control">
+                        </div>
+                    </form>
+                    <form>
+                        <div class="input-group mb-3 input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Contraseña</span>
+                            </div>
+                            <input id="pass" type="password" class="form-control">
+                        </div>
+                    </form>
+                    <form>
+                        <div class="input-group mb-3 input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Confirme Contraseña</span>
+                            </div>
+                            <input id="pass2" type="password" class="form-control">
+                        </div>
+                    </form>
+                    <form>
+                        <div class="input-group mb-3 input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">ROLE</span>
+                            </div>
+                            <select class="form-control mb-3" id="role">
+                                    <option value="">Seleccione un Role</option>
+                                    <option value="ADMIN_ROL">ADMIN_ROL</option>
+                                    <option value="USER_ROLE">USER_ROLE</option>
+                                    <option value="MASTER_ROLE">MASTER_ROLE</option>
+                                    <option value="VIEW_ROL">VIEW_ROL</option>
+                                    <option value="WORK_ROLE">WORK_ROLE</option>
+                                </select>
+                        </div>
+                    </form>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" id="editarUsuario" class="btn btn-warning" data-dismiss="modal">Editar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/SweetAlert2.js"></script>
+    <script src="js/dashbboard.js"></script>
+    <script src="js/administrarUsuarios.js"></script>
+    <script src="js/datatables.min.js"></script>
+    <script src="js/js.cookie.min.js"></script>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+    <script src="js/all.js"></script>
+
+
+    <script src="js/jspdf.debug.js"></script>
+
+    <script src="js/html2canvas.js"></script>
+
+    <script src="js/html2pdf.js"></script>
+
+</body>
+
+</html>

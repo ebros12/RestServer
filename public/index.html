@@ -13,7 +13,7 @@
 <body>
 
 
-    <div class="box">
+    <div class="box inic">
 
         <h2>Iniciar sesión</h2>
 
@@ -57,19 +57,65 @@
 
             <!-- Submit -->
 
-            <input type="submit" id="Logear" value="Login">
+            <a class="float-right btn btn-success" id="Logear" value="Login">Enviar</a>
 
             <!-- Help -->
 
-            <a href="register.htm" class="register">Register!</a>
-            <a href="#" class="forgot-password" title="Forgot password?">Forgot?</a>
+            <a style="color:#007bff; cursor:pointer;" class="Registrate">Registrate!</a>
 
         </form>
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <a href="#" class="cerrar" onclick="signOut();">Cerrar Sesion</a>
     </div>
 
 
+    <div style="border-left: 5px solid #ffc107;" class="Register box">
 
+        <h2>Registro de Persona</h2>
+
+        <form action="">
+
+            <!-- Login -->
+
+            <div class="login-form">
+
+                <label for="Nombre">Nombre</label>
+                <input type="text" id="Nombre" placeholder="Nombre">
+
+                <label for="Apellidos">Apellidos</label>
+                <input type="text" id="Apellidos" placeholder="Apellidos">
+
+                <label for="Correo">Correo</label>
+                <input type="text" id="Correo" placeholder="Correo">
+
+                <label for="password">Contraseña</label>
+                <input type="password" id="password1" placeholder="Contraseña">
+
+                <label for="password2">Confirme Contraseña</label>
+                <input type="password" id="password2" placeholder="Confirme Contraseña">
+
+                <select class="form-control mb-3" id="role">
+                    <option value="">Seleccione un Role</option>
+                    <option value="USER_ROLE">USER_ROLE</option>
+                    <option value="VIEW_ROL">VIEW_ROL</option>
+                    <option value="WORK_ROLE">WORK_ROLE</option>
+                </select>
+
+            </div>
+
+            <!-- Submit -->
+
+            <a class="float-right btn btn-warning" id="Registrar" value="Login">Registrar</a>
+
+            <!-- Help -->
+
+            <a style="color:#007bff; cursor:pointer;" class="Registrate">Inicio Sesion</a>
+
+        </form>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <a href="#" class="cerrar" onclick="signOut();">Cerrar Sesion</a>
+
+    </div>
 
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -77,6 +123,7 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="421228536184-d9fbauchbp2n00di1l3h1aggt81pm5vl.apps.googleusercontent.com">
     <script src="js/login.js"></script>
+    <script src="js/js.cookie.min.js"></script>
 
 
     <script>
@@ -99,17 +146,27 @@
 
             var id_token = googleUser.getAuthResponse().id_token;
 
+            if (Cookies.get('noLog')) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '/google');
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.onload = function(json) {
+                    console.log('Signed in as: ' + xhr.responseText);
+                    let respuesta = JSON.parse(json.explicitOriginalTarget.response)
+                    Cookies.set('token', respuesta.token);
+                    Cookies.set('Usuario', respuesta.usuario.nombre);
+                    Cookies.set('role', respuesta.usuario.role);
+                    window.location.href = "PanelBodegas.html";
+                };
+                xhr.send('idtoken=' + id_token);
+            } else {
+                $(".cerrar").click()
+            }
 
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', '/google');
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.onload = function() {
-                console.log('Signed in as: ' + xhr.responseText);
-            };
-            xhr.send('idtoken=' + id_token);
 
         }
     </script>
+
 </body>
 
 </html>
